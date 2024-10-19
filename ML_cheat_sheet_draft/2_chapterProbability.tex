@@ -140,9 +140,9 @@ Random Variable $X$ এর নির্দিষ্ট মান পাওয়া
 
 % For continuous variable, in the equation $F(x)=\int_{-\infty}^{x} f(u)\mathrm{d}u$, the function $f(x)$ is called a \textbf{probability density function} or \textbf{PDF}. A probability density function is a function that describes the relative likelihood for this random variable to take on a given value\footnote{\url{http://en.wikipedia.org/wiki/Probability_density_function}}.This satisfies the properties $f(x) \geq 0$ and $\int_{-\infty}^{\infty} f(x)\mathrm{d}x=1$.
 
-\subsection{Mutivariate random variables}
-\textbf{Joint Distribution}
-{\bengalifont দুইটি random ভ্যারিয়েবলের একসাথে ঘটার সম্ভাবনাকে জয়েন্ট প্রবাবিলিটি বলে, যেমন একটা ডাইসের 2 পড়ার এবং কয়েনের হেডস পড়ার সম্ভাবনা। }
+\subsection{Multivariate random variables}
+\textbf{Joint Distribution: }
+{\bengalifont দুইটি random ভ্যারিয়েবলের একসাথে ঘটার সম্ভাবনাকে জয়েন্ট প্রবাবিলিটি বলে, যেমন একটা ডাইসের ২ পড়ার এবং কয়েনের হেডস পড়ার সম্ভাবনা। }
 
 \textbf{Marginal Distribution}
 {\bengalifont অন্য ভ্যারিয়েবলের মান বিবেচনা না করে, একটা random ভ্যারিবেলের নির্দিষ্ট মান আসার সম্ভাবনা,যেমন ডাইসে ২ আসার সম্ভাবনা, কয়েন টসের ফল কি হবে সেটা বিবেচনা না করে।
@@ -150,7 +150,7 @@ Random Variable $X$ এর নির্দিষ্ট মান পাওয়া
 \begin{equation}
     P(X = x) = \sum_y P(X = x, Y = y)
 \end{equation} 
-{\bengalifont কনটিনউয়াস এর ক্ষেত্রে }- 
+{\bengalifont কন্টিনিউয়াস এর ক্ষেত্রে }- 
 \begin{equation}
     P(X = x) = \int_{-\infty}^{+\infty} f(x, y) \, dy
 \end{equation}
@@ -169,7 +169,7 @@ F(x,y) \triangleq P(X \leq x, Y \leq y) = \begin{cases}
 
 \begin{itemize}
     \item $F(x, y)$ { \bengalifont হচ্ছে joint CDF, {\bengalifont যেখানে  $X$ এবং $Y$ এর মান $x$ এবং $y$ এর কম বা সমান হওয়ার সম্ভাবনা কত নির্ধারন করে ।}}
-    \item $\sum_{u \leq x, v \leq y} p(u, v)$ {\bengalifont হচ্ছে ডিসক্রিট দুইটি র্যান্ডম ভেরিয়েবলের PMF}
+    \item $\sum_{u \leq x, v \leq y} p(u, v)$ {\bengalifont হচ্ছে ডিসক্রিট দুইটি random ভ্যারিয়েবেলের PMF}
     \item $\int_{-\infty}^{x} \int_{-\infty}^{y} f(u, v) \, du \, dv$ {\bengalifont হচ্ছে কন্টিনিউয়াস ভ্যারিয়েবেলের ক্ষেত্রে pdf ইন্টিগ্রেশন।}
 \end{itemize}
 
@@ -180,9 +180,9 @@ F(x,y) \triangleq P(X \leq x, Y \leq y) = \begin{cases}
 p(X,Y) = P(X|Y) P(Y)
 \end{equation}
 \begin{itemize} 
-    \item $P(X \cap Y)$ {\bengalifont বোঝায় $X$ এবং $Y$ একসাথে ঘটার সম্ভাবনা।} 
-    \item $P(X \mid Y)$ {\bengalifont বোঝায় $X$ ঘটার সম্ভাবনা, শর্ত হল $Y$  ঘটে গেছে } 
-    \item $P(Y)$ {\bengalifont হলো $Y$ ঘটার সম্ভাবনা।} \end{itemize}
+    \item $P(X \cap Y)$ {\bengalifont বোঝায়} $X$ {\bengalifont এবং} $Y$ {\bengalifont একসাথে ঘটার সম্ভাবনা।} 
+    \item $P(X \mid Y)$ {\bengalifont বোঝায়} $Y$ {\bengalifontঘটে যাওয়ার শর্তে,} $X$ {\bengalifont ঘটার সম্ভাবনা} 
+    \item $P(Y)$ {\bengalifont হলো} $Y$ {\bengalifont ঘটার সম্ভাবনা।} \end{itemize}
 
 
 \subsubsection{Chain Rule}
@@ -198,7 +198,7 @@ p(X_{1:N}) = p(X_1)p(X_2|X_1)p(X_3|X_2,X_1)...p(X_N|X_{1:N-1})
 \end{itemize}
 
 \subsubsection{Marginal Distribution}
-\subsubsection{Marginal Distribution} {\bengalifont মার্জিনাল ডিস্ট্রিবিউশন ভ্যারিয়েবেলের সেট থেকে কেবলমাত্র একটা ভ্যারিয়েবলকে ফোকাসে রেখে তার প্রবাবিলিটি ডিস্ট্রিবিউশন নির্ণয় করে অন্য সকল ভ্যারিয়েবল বাদ রেখে।  যেমন, random variable $X$ এর marginal CDF নির্ণয় করার সময় $X$ এর মান শুধুই $x$ এর সমান বা কম বিবেচনা করা হবে, $Y$ এর মান যাই  থাকুক না কেন।  }
+\subsubsection{Marginal Distribution} {\bengalifont Marginal Distribution variable এর সেট থেকে কেবলমাত্র একটা ভ্যারিয়েবলকে ফোকাসে রেখে তার প্রবাবিলিটি ডিস্ট্রিবিউশন নির্ণয় করে অন্য সকল ভ্যারিয়েবল বাদ রেখে।  যেমন, random variable $X$ এর marginal CDF নির্ণয় করার সময় $X$ এর মান শুধুই $x$ এর সমান বা কম বিবেচনা করা হবে, $Y$ এর মান যাই  থাকুক না কেন।  }
 
 \textbf{Marginal CDF} for $X$:
 % Why double summation/integration? The CDF involves accumulating the probabilities or densities over a region (up to the given values 
