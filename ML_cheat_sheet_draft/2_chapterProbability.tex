@@ -89,7 +89,7 @@ F(x) \triangleq P(X \leq x)=\begin{cases}
 \end{equation}
 
 
-- $  P(X \leq x) $ $X$ -{\bengalifont এর মান} $x$-{\bengalifontএর কম বা সমান হওয়ার সম্ভাবনা।}
+- $  P(X \leq x) $ $X$ -{\bengalifont এর মান} $x$-{\bengalifont এর কম বা সমান হওয়ার সম্ভাবনা।}
 
 - $p(u)$ {\bengalifont হচ্ছে ডিসক্রিট ভ্যারিয়েবেলের জন্যে  প্রবাবিলিটি মাস ফাংশন (Probability Mass Function, PMF), যা $u$ এর একটি নির্দিষ্ট মান পাওয়ার সম্ভাব্যতা প্রকাশ করে }
 
@@ -177,9 +177,9 @@ p(X,Y) = P(X|Y) P(Y)
 
 -   $P(X \cap Y)$ {\bengalifont বোঝায়} $X$ {\bengalifont এবং} 
 
--   $P(X \mid Y)$ {\bengalifont বোঝায়} $Y$ {\bengalifontঘটে যাওয়ার শর্তে,} $X$ {\bengalifont ঘটার সম্ভাবনা} 
+-   $P(X \mid Y)$ {\bengalifont বোঝায়} $Y$ {\bengalifont ঘটে যাওয়ার শর্তে,} $X$ {\bengalifont ঘটার সম্ভাবনা} 
 
--   $P(Y)$ {\bengalifont হলো} $Y$ {\bengalifont ঘটার সম্ভাবনা।} \end{itemize}
+-   $P(Y)$ {\bengalifont হলো} $Y$ {\bengalifont ঘটার সম্ভাবনা।}
 
 
 \subsubsection{Chain Rule}
@@ -208,7 +208,8 @@ F_X(x) \triangleq F(x,+\infty) =
 \sum\limits_{x_i \leq x} P(X=x_i) = \sum\limits_{x_i \leq x} \sum\limits_{j=1}^{+\infty} P(X=x_i,Y=y_j) \\
 \int_{-\infty}^{x} f_X(u)du = \int_{-\infty}^{x} \int_{-\finite}^{+\infty} f(u, v) du dv
 \end{cases}
-\end{split}\end{equation}
+\end{split}
+\end{equation}
 
 
     - {\bengalifont প্রথম ক্ষেত্রে, যখন random variable discrete হয়, তখন আমরা $X$ এর সকল  $x_i$ মানের জন্য $P(X=x_i)$ সম্ভাবনা নির্ণয় করে summation বের করছি, যেখানে $x_i <_ x $ ; দ্বিতীয় summation এর ক্ষেত্রে, $Y$ এর সকল মানের জন্যে পাওয়া joint probability $P(X=x_i,Y=y_j)$ sum up করছে।   }
@@ -662,9 +663,10 @@ As $k \rightarrow \infty$, the distribution approaches $\delta(x-m)$. See Figure
 
 
 \subsection{Covariance and correlation}
+
 \begin{definition}
 
-{\bengalifont Covariance} হল দুইটি random variables $X$ এবং $Y$ এর মধ্যে কতটুকু (বা কত ডিগ্রী পর্যন্ত) linearity আছে তা পরিমাপ করে। Covariance কে নিম্নরূপে সংজ্ঞায়িত করা হয়েছে:
+Covariance {\bengalifont হল দুইটি random variables $X$ এবং $Y$ এর মধ্যে কতটুকু (বা কত ডিগ্রী পর্যন্ত) linearity আছে তা পরিমাপ করে। $X$ এবং $Y$ -এর মান কতখানি পরিবর্তন হলো সেটা দেখার জন্যে covariance- এর ইকুয়েশন:- }
 
 \begin{equation}
 \begin{split}
@@ -672,12 +674,19 @@ As $k \rightarrow \infty$, the distribution approaches $\delta(x-m)$. See Figure
          & =\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]
 \end{split}
 \end{equation}
+
+{\bengalifont 
+-   প্রথম ইকুয়েশনে, $X-\mathbb{E}[X]$ এবং $Y-\mathbb{E}[Y]$ দ্বারা $X$ এবং $Y$ ভ্যালু-এর deviation বা বিচ্যুতি বের করা হচ্ছ, এবং তাদের প্রোডাক্ট বা গুণফল থেকে covariance পাওয়া যাবে 
+
+-   দ্বিতীয় ইকুয়েশনে $X$ এবং $Y$ এর গুণফলের গড় থেকে তাদের আলাদা আলাদা গড়ের গুণফল বিয়োগ করে covariance বের করা হচ্ছে। }
+
+
 \end{definition}
 
 \begin{definition}
 {\bengalifont যদি $X$ একটি $D$-dimensional random vector হয়, তাহলে এর {\textbf covariance matrix} কে নিম্নরূপ symmetric, positive definite matrix হিসেবে সংজ্ঞায়িত করা হয়:}
 
-If $X$ is a $D$-dimensional random vector, its \textbf{covariance matrix} is defined to be the following symmetric, positive definite matrix:
+% If $X$ is a $D$-dimensional random vector, its \textbf{covariance matrix} is defined to be the following symmetric, positive definite matrix:
 \begin{align}
 \mathrm{cov}[X] & \triangleq \mathbb{E}\left[(X-\mathbb{E}[X])(X-\mathbb{E}[X])^T\right] \\
        &  = \left( \begin{array}{cccc}
@@ -686,6 +695,20 @@ If $X$ is a $D$-dimensional random vector, its \textbf{covariance matrix} is def
 		   \vdots & \vdots & \ddots & \vdots \\
            \text{Cov}[X_D,X_1] & \text{Cov}[X_D,X_2] & \cdots & \text{var}[X_D] \end{array} \right)
 \end{align}
+
+
+
+-  {\bengalifont একটা random vector $X$-এর জন্যে covariance matrix equation, $X$ এর মানগুলো mean থেকে কিভাবে deviated বা বিচ্যুত হচ্ছে আর এই বিচ্যুতিগুলোর মধ্যে কেমন সম্পর্ক আছে, সেটা হিসাব করে।  
+
+- Covariance matrix এই র‍্যান্ডম ভেক্টর $X$ এর বিভিন্ন ডাইমেনশনের মধ্যে লিনিয়ার সম্পর্কগুলো ধরতে সাহায্য করে।
+
+- $X-\mathbb{E}[X]$ একটি column ভেক্টর-কে রিপ্রেজেন্ট করে; 
+
+- $X-\mathbb{E}[X])^T$ থেকে আমরা row vector পাচ্ছি }
+\[
+\mathbb{E}[\mathbf{x} \mathbf{x}^\top] = \mathbf{\Sigma} + \boldsymbol{\mu} \boldsymbol{\mu}^\top
+\]
+
 \end{definition}
 
 \begin{definition}
@@ -694,9 +717,20 @@ If $X$ is a $D$-dimensional random vector, its \textbf{covariance matrix} is def
 \begin{equation}
 \text{corr}[X,Y] \triangleq \dfrac{\text{Cov}[X,Y]}{\sqrt{\text{var}[X],\text{var}[Y]}}
 \end{equation}
+
+
+\begin{itemize}
+    \item {\bengalifont এই ইকুয়েশনটা $X$ আর $Y$ এর মধ্যে {\bf correlation} বা সম্পর্ক নির্ধারণ করে।}
+    \item $\text{Cov}[X, Y]$: {\bengalifont $X$ আর $Y$ এর মধ্যে covariance বোঝায়।}
+    \item $\text{var}[X]$, $\text{var}[Y]$: {\bengalifont $X$ আর $Y$ এর variance  বোঝায়।}
+    \item $\sqrt{\text{var}[X]}$, $\sqrt{\text{var}[Y]}$: {\bengalifont এইগুলো হলো $X$ আর $Y$ এর variance-এর square root covariance-কে standardize করে, correlation হিসাব করতে।}
+    \item {\bengalifont সংক্ষেপে, এই ফর্মুলা covariance-কে scale করে একটা মান বের করে, যেটা -1 আর 1 এর মধ্যে থাকে, আর $X$ আর $Y$ এর মধ্যে লিনিয়ার সম্পর্কের strength এবং direction নির্দেশ করে।}
+\end{itemize}
+
 \end{definition}
 
-A \textbf{correlation matrix} has the form
+
+{\bengalifont একটা random variable $X$ এর সেট এর জন্যে correlation matrix; যেখানে $X_1, X_2, \dots, X_D$ হলো বিভিন্ন random variables- }
 \begin{equation}
 \mathbf{R} \triangleq \left( \begin{array}{cccc}
            \text{corr}[X_1,X_1] & \text{corr}[X_1,X_2] & \cdots & \text{corr}[X_1,X_D] \\
@@ -704,6 +738,16 @@ A \textbf{correlation matrix} has the form
 		   \vdots & \vdots & \ddots & \vdots \\
            \text{corr}[X_D,X_1] & \text{corr}[X_D,X_2] & \cdots & \text{corr}[X_D,X_D] \end{array} \right)
 \end{equation}
+
+
+
+\begin{itemize}
+
+\item {\bengalifont ম্যাট্রিক্সের diagonal elements (\text{corr}[$X_i$, $X_i$]) হল $X_i$ এর নিজের সাথে correlation, যেটা সবসময় 1 হয়।}
+\item {\bengalifont off-diagonal elements (\text{corr}[$X_i$, $X_j$]) $X_i$ আর $X_j$ এর মধ্যে correlation বা সম্পর্ক বোঝায়।}
+\item {\bengalifont এই ম্যাট্রিক্সটি $X_1$ থেকে $X_D$ পর্যন্ত সব ভেরিয়েবলের pairwise লিনিয়ার সম্পর্কগুলো নির্ধারণ করে।}
+\end{itemize}
+
 
 \begin{figure*}[hbtp]
 \centering
@@ -713,21 +757,35 @@ A \textbf{correlation matrix} has the form
 \label{fig:Correlation-examples} 
 \end{figure*}
 
-\textbf{Uncorrelated does not imply independent}. {\bengalifont উদাহরণস্বরূপ, যদি $X \sim U(-1,1)$ এবং $Y = X^2$, $Y$ যদি $X$ এর উপর নির্ভরশীল,  একে দেখানো যায় যে $ \text{corr}[X, Y]=0$। Figure \ref{fig:Correlation-examples} এ এই বিষয়টি কিছু উদাহরণ সহ দেখানো হয়েছে যেখানে $X$ এবং $Y$ এর মধ্যে স্পষ্ট সম্পর্ক রয়েছে, কিন্তু correlation coefficient 0। Random variables এর মধ্যে আরও সাধারণ একটি dependence-এর পরিমাপ হল \textbf{mutual information}; বিস্তারিত Section TODO তে।}
+ {\bengalifont uncorrelated হলে একটা variable আরেক্টার উপর dependent হতে পারবে না , এমন নয়। উদাহরণস্বরূপ, যদি $X \sim U(-1,1)$ এবং $Y = X^2$, $Y$ যদি $X$ এর উপর নির্ভরশীল,  একে দেখানো যায় যে $ \text{corr}[X, Y]=0$। Figure \ref{fig:Correlation-examples} এ এই বিষয়টি কিছু উদাহরণ সহ দেখানো হয়েছে যেখানে $X$ এবং $Y$ এর মধ্যে স্পষ্ট সম্পর্ক রয়েছে, কিন্তু correlation coefficient 0। Random variables এর মধ্যে আরও সাধারণ একটি dependence-এর পরিমাপ হল \textbf{mutual information}; বিস্তারিত Section TODO তে।}
 
 
 
 \subsection{Multivariate Gaussian distribution}
 \label{sec:MVN}
-The \textbf{multivariate Gaussian} or \textbf{multivariate normal}(MVN) is the most widely used joint probability density function for continuous variables. We discuss MVNs in detail in Chapter 4; here we just give some definitions and plots.
+{\bengalifont 
+Continious variable-এর ক্ষেত্রে 
+\textbf{Multivariate Gaussian} অথবা \textbf{multivariate normal} (MVN) হল সবচেয়ে বহুল ব্যবহৃত \textbf{joint probability density function}।  আমরা MVN-গুলো নিয়ে Chapter 4-এ বিশদভাবে আলোচনা করব; এখানে আমরা শুধুমাত্র কিছু সংজ্ঞা এবং প্লট দিচ্ছি।
 
-The pdf of the MVN in $D$ dimensions is defined by the following:
+{\bengalifont MVN-এর $D$-dimensional pdf নিচের সমীকরণে দেওয়া হলো-}
+
+
 \begin{equation}
 \mathcal{N}(\vec{x}|\vec{\mu},\Sigma) \triangleq \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\exp\left[-\dfrac{1}{2}(\vec{x}-\vec{\mu})^T\Sigma^{-1}(\vec{x}-\vec{\mu})\right]
 \end{equation}
-where $\vec{\mu}=\mathbb{E}[X] \in \mathbb{R}^D$ is the mean vector, and $\Sigma=\text{Cov}[X]$ is the $D \times D$ covariance matrix. The normalization constant $(2\pi)^{D/2}|\Sigma|^{1/2}$ just ensures that the pdf integrates to 1.
+
+\begin{itemize}
+    \item {\bengalifont এই ইকুয়েশনটি {\bf multivariate normal distribution} $\mathcal{N}(\vec{x}|\vec{\mu}, \Sigma)$ প্রকাশ করে। এটি একটি $D$-dimensional random variable $\vec{x}$ এর probability density function বোঝায়, যেখানে $\vec{\mu}$ হলো mean vector এবং $\Sigma$ হলো covariance matrix।}
+    \item {\bengalifont $\frac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}$ অংশটি হলো normalization factor, যা নিশ্চিত করে যে total probability 1 এর সমান হয়। এটি dimensionality $D$ এবং covariance matrix $\Sigma$ এর determinant এর উপর নির্ভর করে।}
+    \item {\bengalifont $\exp\left[-\frac{1}{2}(\vec{x} - \vec{\mu})^T\Sigma^{-1}(\vec{x} - \vec{\mu})\right]$ অংশটি হলো exponential term, যা $x$ পয়েন্টটা mean $\vec{\mu}$ থেকে কত দূরে আছে তা হিসাব করে, এবং covariance matrix $\Sigma^{-1}$ দিয়ে স্কেল করে। এই term distribution এর shape নির্ধারণ করে।}
+    \item {\bengalifont সংক্ষেপে, এই ইকুয়েশনটি $\vec{\mu}$ mean এবং $\Sigma$ covariance matrix সহ একটি multivariate normal distribution এর মধ্যে $\vec{x}$ এর value পাওয়ার সম্ভাবনা প্রকাশ করে।}
+\end{itemize}
 
 Figure \ref{fig:2d-Gaussions} plots some MVN densities in 2d for three different kinds of covariance matrices. A full covariance matrix has A $D(D+1)/2$ parameters (we divide by 2 since $\Sigma$ is symmetric). A diagonal covariance matrix has $D$ parameters, and has 0s in the off-diagonal terms. A spherical or isotropic covariance,$\Sigma=\sigma^2\vec{I}_D$, has one free parameter.
+
+{\bengalifont Figure \ref{fig:2d-Gaussions} এ আমরা 2D-তে কিছু MVN \textbf{densities} প্লট করেছি তিন রকমের \textbf{covariance matrix}-এর জন্য। একটি পূর্ণ \textbf{covariance matrix}-এ $D(D+1)/2$ প্যারামিটার থাকে (আমরা 2 দিয়ে ভাগ করি কারণ $\Sigma$ symmetric)। একটি diagonal \textbf{covariance matrix}-এ $D$ প্যারামিটার থাকে, এবং off-diagonal টার্মগুলোতে 0 থাকে। একটি spherical বা isotropic \textbf{covariance} যেটি $\Sigma=\sigma^2\vec{I}_D$ দ্বারা প্রকাশিত হয়, সেটিতে মাত্র একটি ফ্রি প্যারামিটার থাকে।}
+
+
 
 \begin{figure}[hbtp]
 \centering
@@ -904,13 +962,7 @@ This is called \textbf{Monte Carlo integration}\footnote{\url{http://en.wikipedi
 
 - {\bengalifont entropy-এর সম্পূর্ণ সমীকরণ}: {\bengalifont এই সমীকরণটি প্রতিটি probability $p(X=k)$ কে তার লগারিদম $\log_2 p(X=k)$ এর সাথে গুণ করে, তারপর সমস্ত states $k$ এর জন্য যোগ করে, এবং শেষে এটিকে -1 দ্বারা গুণ করা হচ্ছে।}
 
-{\bengalifont 
-### এর কাজ কী:
-Entropy পরিমাপ করে একটি probability distribution এর মধ্যে কতটা uncertainty বা information content রয়েছে। সহজ ভাষায়, এটি আমাদের বলে দেয় কতটা unpredictable হবে random variable $X$ এর মান।}
 
-- {\bengalifont যদি সমস্ত states সমান সম্ভাবনা নিয়ে থাকে, তাহলে entropy বেশি হবে, কারণ $X$ এর মান সহজে পূর্বানুমান করা যায় না।}
-
-- {\bengalifont যদি একটি state এর সমস্ত সম্ভাবনা থাকে (i.e., certaintly), তবে entropy কম বা শূন্য হবে, কারণ এখানে কোনও uncertainty নেই।}
 
 
 {\bengalifont সাধারণত আমরা log এর base 2 ব্যবহার করি, এবং এই ক্ষেত্রে এর units কে \textbf{bits} (binary digits এর সংক্ষিপ্ত রূপ) বলা হয়। যদি আমরা log এর base $e$ ব্যবহার করি, units গুলোকে \textbf{nats} বলা হয়।}
@@ -956,17 +1008,31 @@ entropy is the uniform distribution}.
 \mathbb{I}(X;Y) & \triangleq \mathbb{KL}(P(X,Y)||P(X)P(Y)) \\
     & =\sum\limits_x\sum\limits_yp(x,y)\log\dfrac{p(x,y)}{p(x)p(y)}
 \end{split}\end{equation}
-We have $\mathbb{I}(X;Y) \geq 0$ with equality if $P(X,Y)=P(X)P(Y)$. That is, the MI is zero if the variables are independent.
+
+
+
+\begin{itemize}
+    \item {\bengalifont এই ইকুয়েশনটি $X$ আর $Y$ এর মধ্যে {\bf mutual information} $\mathbb{I}(X;Y)$ প্রকাশ করে।}
+    
+\end{itemize}
+
+{\bengalifont equality ঘটে তখনই যখন $P(X,Y)=P(X)P(Y)$। অর্থাৎ, MI বা \textbf{Mutual Information} শূন্য হয় যদি ভেরিয়েবলগুলো independent হয়।}
 \end{definition}
 
-To gain insight into the meaning of MI, it helps to re-express it in terms of joint and conditional entropies. One can show that the above expression is equivalent to the following:
+{\bengalifont MI এর অর্থ বুঝতে গেলে এটি \textbf{joint} এবং \textbf{conditional entropies}-এর মাধ্যমে বুঝা সহজ হবে । উপরের ইকুশনটির আরেকটি ফর্ম হচ্ছে- }
+
+
+% We have $\mathbb{I}(X;Y) \geq 0$ with equality if $P(X,Y)=P(X)P(Y)$. That is, the MI is zero if the variables are independent.
+% \end{definition}
+
+
 \begin{eqnarray}
 \mathbb{I}(X;Y)&=&\mathbb{H}(X)-\mathbb{H}(X|Y)\\
                &=&\mathbb{H}(Y)-\mathbb{H}(Y|X)\\
                &=&\mathbb{H}(X)+\mathbb{H}(Y)-\mathbb{H}(X,Y)\\
                &=&\mathbb{H}(X,Y)-\mathbb{H}(X|Y)-\mathbb{H}(Y|X)
 \end{eqnarray}
-where $\mathbb{H}(X)$ and $\mathbb{H}(Y)$ are the \textbf{marginal entropies}, $\mathbb{H}(X|Y)$ and $\mathbb{H}(Y|X)$ are the \textbf{conditional entropies}, and $\mathbb{H}(X,Y)$ is the \textbf{joint entropy} of $X$ and $Y$, see Fig. \ref{fig:mi}\footnote{\url{http://en.wikipedia.org/wiki/Mutual_information}}.
+
 
 \begin{figure}[hbtp]
 \centering
